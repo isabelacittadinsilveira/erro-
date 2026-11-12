@@ -1,0 +1,3337 @@
+/* ================================================================
+   EDUCACÃO | ATIVIDADE PRÁTICA DE CSS3 — RECONSTRUÇÃO DO MODELO
+   ================================================================
+   OBJETIVO: reconstruir as cores e a aparência do arquivo modelo.pdf.
+   Comece pelas VARIÁVEIS :root e siga as seções de cima para baixo.
+   PARA CADA COMANDO:
+   1) Leia a explicação e observe o PDF.
+   2) Escolha UMA alternativa A / B / C.
+   3) Escreva APENAS o valor escolhido entre : e ;
+   4) Salve (Ctrl+S) e observe o resultado com o Live Server.
+   5) Se não ficar igual, teste outra alternativa.
+
+   EXEMPLO: se a resposta é flex, escreva: display: flex;
+   Não digite A, B ou C; digite o VALOR. Não apague chaves,
+   dois-pontos, ponto e vírgula, seletores e regras @media.
+
+   POR QUE A PÁGINA APARECE ANTES DAS RESPOSTAS?
+   O arquivo base.css monta uma aparência neutra. Quando você
+   completa style.css, a propriedade preenchida passa a valer.
+   O base.css NÃO É GABARITO e NÃO deve ser modificado.
+   ================================================================ */
+
+/* ============ PALETA DE CORES E VARIÁVEIS ============ */
+:root {
+   /* --green: define o verde principal da marca.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #c2410c
+       B) #2e8b50
+       C) #2574a9
+    */
+   --green: #c2410c;
+   /* --green-dark: guarda o verde escuro dos títulos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #145c36
+       B) #2574a9
+       C) #c2410c
+    */
+   --green-dark: #145c36;
+   /* --green-deep: guarda o verde profundo do rodapé.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #2574a9
+       B) #104a2d
+       C) #c2410c
+    */
+   --green-deep: #2574a9;
+   /* --green-soft: guarda o verde claro dos fundos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #2574a9
+       B) #c2410c
+       C) #eef5e9
+    */
+   --green-soft: #2574a9;
+   /* --orange: guarda o laranja de destaque.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #c2410c
+       B) #ff9800
+       C) #2574a9
+    */
+   --orange: #c2410c;
+   /* --orange-dark: guarda o laranja do botão ao passar o mouse.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #e88500
+       B) #c2410c
+       C) #2574a9
+    */
+   --orange-dark: #e88500;
+   /* --cream: guarda o creme das seções.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #2574a9
+       B) #fff8e7
+       C) #c2410c
+    */
+   --cream: #2574a9;
+   /* --white: guarda o branco dos cartões.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #c2410c
+       B) #ffffff
+       C) #2574a9
+    */
+   --white: #c2410c;
+   /* --text: define a cor de texto principal.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #c2410c
+       B) #2574a9
+       C) #293b32
+    */
+   --text: #c2410c;
+   /* --muted: define o cinza-esverdeado de texto secundário.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #64736a
+       B) #c2410c
+       C) #2574a9
+    */
+   --muted: #64736a;
+   /* --border: define o tom suave das bordas.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #c2410c
+       B) #2574a9
+       C) #e8e6dc
+    */
+   --border: #c2410c;
+   /* --shadow: guarda a sombra dos cartões.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0 4px 12px rgba(0, 0, 0, 0.25)
+       B) none
+       C) 0 8px 24px rgba(26, 67, 42, 0.08)
+    */
+   --shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+   /* --radius: guarda o raio-padrão de cantos arredondados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0px
+       B) 8px
+       C) 16px
+    */
+   --radius: 0px;
+   /* --content-width: guarda a largura máxima das seções.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 800px
+       B) 1160px
+       C) 900px
+    */
+   --content-width: 1160px;
+}
+
+/* ============ CONFIGURAÇÕES GERAIS ============ */
+* {
+   /* box-sizing: define como padding e bordas entram no cálculo do tamanho.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) content-box
+       B) inherit
+       C) border-box
+    */
+   box-sizing:border-box;
+}
+
+/* ============ ROLAGEM DA PÁGINA ============ */
+html {
+   /* scroll-behavior: controla o movimento da rolagem ao clicar nos links.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) initial
+       B) smooth
+       C) auto
+    */
+   scroll-behavior: initial;
+   /* scroll-padding-top: reserva espaço para o cabeçalho ao navegar por âncoras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 90px
+       B) 0
+       C) 10px
+    */
+   scroll-padding-top: 90px;
+}
+
+/* ============ CORPO DA PÁGINA ============ */
+body {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 18px
+    */
+   margin: 10px;
+   /* font-family: define a família de letras usada nos textos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) Arial, sans-serif
+       B) "Times New Roman", serif
+       C) "Poppins", "Segoe UI", Arial, sans-serif
+    */
+   font-family: Arial, sans-serif;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) var(--text)
+    */
+   color: var(--orange);
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--orange)
+       C) var(--white)
+    */
+   background: transparent;
+   /* line-height: regula a altura de cada linha de texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1.2
+       B) 1.6
+       C) 1
+    */
+   line-height: 1.6;
+}
+
+/* ============ IMAGENS ============ */
+img {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) block
+       B) flex
+       C) grid
+    */
+   display: block;
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 50%
+       C) 100%
+    */
+   width: 100%;
+   /* max-width: limita a largura máxima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 100%
+    */
+   max-width: 100%;
+   /* height: define a altura.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) auto
+       C) 10px
+    */
+   height: 10px;
+   /* object-fit: controla como uma imagem é encaixada na área disponível.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) contain
+       B) fill
+       C) cover
+    */
+   object-fit: contain;
+}
+
+/* ============ LINKS ============ */
+a {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) inherit
+    */
+   color: var(--orange);
+   /* text-decoration: define sublinhado ou outros efeitos nos links.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) none
+       B) underline
+       C) line-through
+    */
+   text-decoration: none;
+}
+
+/* ============ LISTAS ============ */
+ul {
+   /* list-style: define os marcadores de listas.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) disc
+       B) decimal
+       C) none
+    */
+   list-style: disc;
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 18px
+       C) 10px
+    */
+   margin: 18px;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 18px
+       C) 0
+    */
+   padding: 18px;
+}
+
+/* ============ CABEÇALHO ============ */
+.site-header {
+   /* position: escolhe o modo de posicionamento do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) static
+       B) relative
+       C) sticky
+    */
+   position: static;
+   /* top: regula a distância até o topo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 18px
+       C) 0
+    */
+   top: 18px;
+   /* z-index: indica qual elemento aparece na frente dos outros.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10
+       B) 0
+       C) 1
+    */
+   z-index: 10;
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) grid
+       B) flex
+       C) block
+    */
+   display: grid;
+   /* align-items: alinha itens no eixo transversal de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) stretch
+       C) start
+    */
+   align-items: center;
+   /* justify-content: distribui o conteúdo pelo eixo principal.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) space-between
+       B) space-around
+       C) center
+    */
+   justify-content: space-between;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 24px
+       C) 0
+    */
+   gap: 24px;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 12px max(5vw, calc((100vw - var(--content-width)) / 2))
+       B) 0
+       C) 10px
+    */
+   padding: 12px max(5vw, calc((100vw - var(--content-width)) / 2));
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--green)
+       C) rgba(255, 255, 255, 0.97)
+    */
+   background: rgba(255, 255, 255, 0.97);
+   /* border-bottom: define a borda inferior.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) none
+       B) 1px solid rgba(20, 92, 54, 0.08)
+       C) 1px solid #999
+    */
+   border-bottom: 1px solid rgba(20, 92, 54, 0.08);
+}
+
+/* ============ LOGOTIPO ============ */
+.logo {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) inline-flex
+       B) flex
+       C) block
+    */
+   display: inline-flex;
+   /* align-items: alinha itens no eixo transversal de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) start
+       C) stretch
+    */
+   align-items: center;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 9px
+       C) 10px
+    */
+   gap: 10px;
+   /* flex-shrink: define se o item pode encolher.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 2
+       B) 1
+       C) 0
+    */
+   flex-shrink: 2;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--green-dark)
+       C) var(--orange)
+    */
+   color: var(--orange);
+}
+
+/* ============ ÍCONE DA MARCA ============ */
+.logo-mark {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) flex
+       B) grid
+       C) block
+    */
+   display: flex;
+   /* place-items: alinha o conteúdo dentro das células de Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) stretch
+       B) start
+       C) center
+    */
+   place-items: stretch;
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 42px
+    */
+   width: 42px;
+   /* height: define a altura.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 42px
+    */
+   height: 42px;
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 27px
+       B) 0
+       C) 10px
+    */
+   font-size: 27px;
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green-soft)
+       B) transparent
+       C) var(--orange)
+    */
+   background: var(--green-soft);
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 50%
+       B) 8px
+       C) 0
+    */
+   border-radius: 50%;
+}
+
+/* ============ TEXTOS DA MARCA ============ */
+.logo-copy {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) grid
+       B) flex
+       C) block
+    */
+   display: grid;
+   /* flex-direction: escolhe se os itens ficam em linha ou coluna.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) column
+       B) row-reverse
+       C) row
+    */
+   flex-direction: row-reverse;
+   /* line-height: regula a altura de cada linha de texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1.2
+       B) 1
+       C) 1.1
+    */
+   line-height: 1.2;
+}
+
+.logo-copy strong {
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 1.25rem
+    */
+   font-size: 1.25rem;
+   /* font-weight: controla a espessura (peso) das letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 800
+       B) 400
+       C) 600
+    */
+   font-weight: 800;
+}
+
+.logo-copy strong span {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) var(--green)
+    */
+   color: var(--green);
+}
+
+.logo-copy small {
+   /* margin-top: cria espaço externo acima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 3px
+    */
+   margin-top: 10px;
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 0.65rem
+    */
+   font-size: 0.65rem;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--muted)
+       B) var(--orange)
+       C) transparent
+    */
+   color: var(--muted);
+}
+
+/* ============ MENU DE NAVEGAÇÃO ============ */
+.main-nav ul {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) block
+       B) grid
+       C) flex
+    */
+   display: block;
+   /* align-items: alinha itens no eixo transversal de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) stretch
+       C) start
+    */
+   align-items: center;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) clamp(10px, 1.6vw, 24px)
+    */
+   gap: 10px;
+}
+
+/* ============ LINKS DO MENU ============ */
+.main-nav a {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) inline-block
+       B) flex
+       C) block
+    */
+   display: inline-block;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 8px 0
+       B) 10px
+       C) 0
+    */
+   padding: 8px 0;
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0.82rem
+       B) 0
+       C) 10px
+    */
+   font-size: 0.82rem;
+   /* font-weight: controla a espessura (peso) das letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 600
+       B) 400
+       C) 700
+    */
+   font-weight: 700;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #40564a
+       B) transparent
+       C) var(--orange)
+    */
+   color: var(--orange);
+   /* border-bottom: define a borda inferior.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) none
+       B) 1px solid #999
+       C) 2px solid transparent
+    */
+   border-bottom: 2px solid transparent;
+   /* transition: anima as mudanças de aparência.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) all 300ms ease
+       B) color 180ms ease, border-color 180ms ease
+       C) none
+    */
+   transition: color 180ms ease, border-color 180ms ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green-dark)
+       B) var(--orange)
+       C) transparent
+    */
+   color: var(--green-dark);
+   /* border-bottom-color: muda a cor da borda inferior.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green)
+       B) var(--orange)
+       C) transparent
+    */
+   border-bottom-color: var(--green);
+}
+
+/* ============ TODOS OS BOTÕES ============ */
+.button {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) flex
+       B) block
+       C) inline-flex
+    */
+   display: inline-flex;
+   /* align-items: alinha itens no eixo transversal de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) stretch
+       C) start
+    */
+   align-items: stretch;
+   /* justify-content: distribui o conteúdo pelo eixo principal.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) space-between
+       B) center
+       C) space-around
+    */
+   justify-content: space-between;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 8px
+       B) 10px
+       C) 0
+    */
+   gap: 10px;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 12px 20px
+       C) 10px
+    */
+   padding: 12px 20px;
+   /* border: define uma borda completa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) none
+       B) 1px solid #999
+       C) 2px solid #555
+    */
+   border: 2px solid #555;
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 999px
+       C) 8px
+    */
+   border-radius: 999px;
+   /* font: ajusta a fonte e propriedades tipográficas em uma única declaração.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) inherit
+       B) normal 16px Arial, sans-serif
+       C) bold 14px Arial, sans-serif
+    */
+   font: normal 16px Arial, sans-serif;
+   /* font-weight: controla a espessura (peso) das letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 700
+       B) 400
+       C) 600
+    */
+   font-weight: 700;
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 0.9rem
+    */
+   font-size: 0.9rem;
+   /* text-align: alinha o conteúdo de texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) right
+       C) left
+    */
+   text-align: center;
+   /* cursor: define o formato do ponteiro do mouse.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) default
+       B) pointer
+       C) help
+    */
+   cursor: pointer;
+   /* transition: anima as mudanças de aparência.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) all 300ms ease
+       B) none
+       C) background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease
+    */
+   transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+/* ============ EFEITO AO PASSAR O MOUSE ============ */
+.button:hover {
+   /* transform: desloca, gira ou modifica a forma.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) translateY(-3px)
+       B) none
+       C) translateY(-2px)
+    */
+   transform: translateY(-3px);
+   /* box-shadow: cria sombra em volta da caixa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0 4px 12px rgba(0,0,0,0.25)
+       B) 0 7px 16px rgba(22, 77, 43, 0.15)
+       C) none
+    */
+   box-shadow: 0 7px 16px rgba(22, 77, 43, 0.15);
+}
+
+/* ============ BOTÃO PEQUENO ============ */
+.button-small {
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px 16px
+       B) 0
+       C) 10px
+    */
+   padding: 10px 16px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--white)
+       B) transparent
+       C) var(--orange)
+    */
+   color: var(--white);
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--green)
+       C) var(--orange)
+    */
+   background: var(--green);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 0.78rem
+    */
+   font-size: 0.78rem;
+   /* white-space: controla quando o texto pode quebrar de linha.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) nowrap
+       B) pre-wrap
+       C) normal
+    */
+   white-space: pre-wrap;
+}
+
+/* ============ BOTÃO PRINCIPAL ============ */
+.button-primary {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--white)
+       B) var(--orange)
+       C) transparent
+    */
+   color: var(--white);
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) var(--green)
+    */
+   background: var(--green);
+}
+
+.button-primary:hover {
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--orange-dark)
+       C) var(--orange)
+    */
+   background: var(--orange-dark);
+}
+
+/* ============ BOTÃO SECUNDÁRIO ============ */
+.button-secondary {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--white)
+       B) var(--orange)
+       C) transparent
+    */
+   color: var(--white);
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--orange)
+       C) var(--green)
+    */
+   background: transparent;
+}
+
+.button-secondary:hover {
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green-dark)
+       B) var(--orange)
+       C) transparent
+    */
+   background: var(--green-dark);
+}
+
+/* ============ BANNER / ABERTURA ============ */
+.hero {
+   /* position: escolhe o modo de posicionamento do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) static
+       B) absolute
+       C) relative
+    */
+   position: relative;
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) flex
+       B) block
+       C) grid
+    */
+   display: block;
+   /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1fr 1fr
+       B) 0.95fr 1.05fr
+       C) 1fr
+    */
+   grid-template-columns: 0.95fr 1.05fr;
+   /* align-items: alinha itens no eixo transversal de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) stretch
+       C) start
+    */
+   align-items: stretch;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 44px
+       C) 10px
+    */
+   gap: 44px;
+   /* min-height: define uma altura mínima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 390px
+       C) 0
+    */
+   min-height: 390px;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 54px max(5vw, calc((100vw - var(--content-width)) / 2))
+       C) 10px
+    */
+   padding: 54px max(5vw, calc((100vw - var(--content-width)) / 2));
+   /* overflow: controla elementos que ultrapassam uma caixa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) hidden
+       B) visible
+       C) scroll
+    */
+   overflow: scroll;
+   /* background: escolhe o fundo/gradiente desta seção.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) linear-gradient(110deg, var(--cream) 0%, #f6f5e9 52%, #e4efd9 100%)
+       B) var(--white)
+       C) var(--green)
+    */
+   background: linear-gradient(110deg, var(--cream) 0%, #f6f5e9 52%, #e4efd9 100%);
+}
+
+/* ============ TEXTOS DO BANNER ============ */
+.hero-content {
+   /* position: escolhe o modo de posicionamento do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) relative
+       B) absolute
+       C) static
+    */
+   position: absolute;
+   /* z-index: indica qual elemento aparece na frente dos outros.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1
+       B) 10
+       C) 0
+    */
+   z-index: 10;
+   /* max-width: limita a largura máxima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 570px
+    */
+   max-width: 570px;
+}
+
+/* ============ SELOS PEQUENOS ============ */
+.eyebrow {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0 0 10px
+       C) 0
+    */
+   margin: 0 0 10px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) var(--green)
+    */
+   color: var(--green);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 0.76rem
+       C) 10px
+    */
+   font-size: 0.78rem;
+   /* font-weight: controla a espessura (peso) das letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 600
+       B) 400
+       C) 800
+    */
+   font-weight: 800;
+   /* letter-spacing: altera o espaço entre letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0.09em
+       B) 0.04em
+       C) normal
+    */
+   letter-spacing: normal;
+   /* text-transform: define se as letras aparecem maiúsculas ou minúsculas.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) uppercase
+       B) lowercase
+       C) none
+    */
+   text-transform: uppercase;
+}
+
+.hero .eyebrow {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) inline-block
+       B) block
+       C) flex
+    */
+   display: inline-block;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 5px 11px
+       C) 10px
+    */
+   padding: 5px 11px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) var(--white)
+    */
+   color: var(--white);
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green)
+       B) var(--orange)
+       C) transparent
+    */
+   background: transparent;
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 8px
+       B) 0
+       C) 999px
+    */
+   border-radius: 999px;
+   /* letter-spacing: altera o espaço entre letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0.09em
+       B) 0.04em
+       C) normal
+    */
+   letter-spacing: normal;
+}
+
+/* ============ TÍTULO DO BANNER ============ */
+.hero h1 {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 8px 0 16px
+       B) 10px
+       C) 0
+    */
+   margin: 8px 0 16px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--green-dark)
+       C) var(--orange)
+    */
+   color: var(--green-dark);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) clamp(2.1rem, 3.4vw, 3.5rem)
+       C) 10px
+    */
+   font-size: clamp(2.1rem, 3.4vw, 3.5rem);
+   /* line-height: regula a altura de cada linha de texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1.2
+       B) 1
+       C) 1.12
+    */
+   line-height: 1.12;
+   /* letter-spacing: altera o espaço entre letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0.04em
+       B) normal
+       C) -0.04em
+    */
+   letter-spacing: 0.04em;
+}
+
+.hero h1 span {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green)
+       B) var(--orange)
+       C) transparent
+    */
+   color: var(--green);
+}
+
+.hero-description {
+   /* max-width: limita a largura máxima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 490px
+       C) 0
+    */
+   max-width: 490px;
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 0 0 24px
+    */
+   margin: 0 0 24px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) #4b5d51
+       B) var(--orange)
+       C) transparent
+    */
+   color: #4b5d51;
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 1.02rem
+       C) 10px
+    */
+   font-size: 10px;
+}
+
+/* ============ IMAGEM DO BANNER ============ */
+.hero-image {
+   /* position: escolhe o modo de posicionamento do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) absolute
+       B) relative
+       C) static
+    */
+   position: absolute;
+   /* align-self: alinha um único item.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) start
+       B) stretch
+       C) center
+    */
+   align-self: stretch;
+   /* min-height: define uma altura mínima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 300px
+       C) 10px
+    */
+   min-height: 300px;
+}
+
+.hero-image img {
+   /* position: escolhe o modo de posicionamento do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) static
+       B) absolute
+       C) relative
+    */
+   position: relative;
+   /* inset: resume o posicionamento nos quatro lados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 18px
+       C) 10px
+    */
+   inset: 18px;
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 100%
+       B) 50%
+       C) 10px
+    */
+   width: 100%;
+   /* height: define a altura.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 100%
+    */
+   height: 100%;
+   /* min-height: define uma altura mínima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 300px
+    */
+   min-height: 300px;
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 8px
+       B) 42% 42% 18px 18px
+       C) 0
+    */
+   border-radius: 42% 42% 18px 18px;
+   /* object-position: escolhe a parte da imagem que permanece visível.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) bottom
+       B) top
+       C) center
+    */
+   object-position: center;
+}
+
+.hero-decoration {
+   /* position: escolhe o modo de posicionamento do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) relative
+       B) static
+       C) absolute
+    */
+   position: relative;
+   /* bottom: regula a distância até a base.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 22px
+    */
+   bottom: 22px;
+   /* left: regula a distância até a esquerda.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 3%
+       B) 10px
+       C) 0
+    */
+   left: 10px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--green)
+       C) rgba(46, 139, 80, 0.12)
+    */
+   color: transparent;
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 4rem
+       C) 0
+    */
+   font-size: 10px;
+   /* transform: desloca, gira ou modifica a forma.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) none
+       B) translateY(-3px)
+       C) rotate(-20deg)
+    */
+   transform: rotate(-20deg);
+}
+
+/* ============ ESPAÇAMENTO DAS SEÇÕES ============ */
+.section {
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) min(100% - 48px, var(--content-width))
+       B) 10px
+       C) 0
+    */
+   width: min(100% - 48px, var(--content-width));
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 0 auto
+    */
+   margin: 10px;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 72px 0
+       C) 10px
+    */
+   padding: 72px 0;
+}
+
+/* ============ TÍTULOS DE SEÇÃO ============ */
+.section-heading {
+   /* max-width: limita a largura máxima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 700px
+       C) 10px
+    */
+   max-width: 700px;
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 0 auto 30px
+    */
+   margin: 0 auto 30px;
+   /* text-align: alinha o conteúdo de texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) right
+       B) center
+       C) left
+    */
+   text-align: left;
+
+}
+
+.section-heading .eyebrow {
+   /* margin-bottom: cria espaço externo abaixo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 5px
+       C) 10px
+    */
+   margin-bottom: 10px;
+}
+
+.section-heading h2,
+.about-content h2,
+.contact-content h2 {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 0 0 10px
+       C) 10px
+    */
+   margin: 0 0 10px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green-dark)
+       B) transparent
+       C) var(--orange)
+    */
+   color: var(--green-dark);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) clamp(1.65rem, 2.5vw, 2.2rem)
+    */
+   font-size: clamp(1.65rem, 2.5vw, 2.2rem);
+   /* line-height: regula a altura de cada linha de texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1.6
+       B) 1
+       C) 1.2
+    */
+   line-height: 1.6;
+}
+
+.section-heading>p:last-child {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 18px
+       C) 10px
+    */
+   margin: 18px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--orange)
+       C) var(--muted)
+    */
+   color: transparent;
+}
+
+/* ============ FUNDO DOS SERVIÇOS ============ */
+.services {
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 50%
+       B) 10px
+       C) 100%
+    */
+   width: 100%;
+   /* max-width: limita a largura máxima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) none
+    */
+   max-width: 10px;
+   /* padding-right: define espaço interno à direita.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) max(24px, calc((100vw - var(--content-width)) / 2))
+       B) 0
+       C) 10px
+    */
+   padding-right: max(24px, calc((100vw - var(--content-width)) / 2));
+   /* padding-left: define espaço interno à esquerda.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) max(24px, calc((100vw - var(--content-width)) / 2))
+       B) 10px
+       C) 0
+    */
+   padding-left: max(24px, calc((100vw - var(--content-width)) / 2));
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--orange)
+       C) var(--cream)
+    */
+   background: var(--orange);
+}
+
+/* ============ GRADE DOS SERVIÇOS ============ */
+.service-grid {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) grid
+       B) flex
+       C) block
+    */
+   display: grid;
+   /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1fr 1fr
+       B) 1fr
+       C) repeat(3, minmax(0, 1fr))
+    */
+   grid-template-columns: 22px;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 22px
+       B) 10px
+       C) 0
+    */
+   gap: repeat(3, minmax(0, 1fr));
+   /* max-width: limita a largura máxima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--content-width)
+       B) 0
+       C) 10px
+    */
+   max-width: 10px;
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 0 auto
+    */
+   margin: 10px;
+   ;
+}
+
+/* ============ CARTÃO DE SERVIÇO ============ */
+.service-card {
+   /* overflow: controla elementos que ultrapassam uma caixa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) hidden
+       B) visible
+       C) scroll
+    */
+   overflow: scroll;
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--orange)
+       C) var(--white)
+    */
+   background: var(--white);
+   /* border: define uma borda completa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) none
+       B) 1px solid var(--border)
+       C) 1px solid #999
+    */
+   border: 1px solid var(--border);
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 8px
+       C) var(--radius)
+    */
+   border-radius: var(--radius);
+   /* box-shadow: cria sombra em volta da caixa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0 4px 12px rgba(0,0,0,0.25)
+       B) var(--shadow)
+       C) none
+    */
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+   /* transition: anima as mudanças de aparência.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transform 180ms ease, box-shadow 180ms ease
+       B) all 300ms ease
+       C) none
+    */
+   transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.service-card:hover {
+   /* transform: desloca, gira ou modifica a forma.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) translateY(-3px)
+       B) translateY(-5px)
+       C) none
+    */
+   transform: translateY(-5px);
+   /* box-shadow: cria sombra em volta da caixa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) none
+       B) 0 14px 30px rgba(26, 67, 42, 0.13)
+       C) 0 4px 12px rgba(0,0,0,0.25)
+    */
+   box-shadow: 0 14px 30px rgba(26, 67, 42, 0.13);
+}
+
+.service-card>img {
+   /* height: define a altura.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 210px
+    */
+   height: 210px;
+   /* object-fit: controla como uma imagem é encaixada na área disponível.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) cover
+       B) contain
+       C) fill
+    */
+   object-fit: contain;
+}
+
+/* ============ CONTEÚDO DO CARTÃO ============ */
+.card-content {
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 22px
+    */
+   padding: 22px;
+}
+
+.card-content h3 {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0 0 8px
+       B) 0
+       C) 10px
+    */
+   margin: 10px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green-dark)
+       B) var(--orange)
+       C) transparent
+    */
+   color: var(--green-dark);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 1.12rem
+       C) 10px
+    */
+   font-size: 1.12rem;
+   /* line-height: regula a altura de cada linha de texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1.3
+       B) 1
+       C) 1.2
+    */
+   line-height: 1.3;
+}
+
+.card-content p {
+   /* min-height: define uma altura mínima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 52px
+       C) 0
+    */
+   min-height: 52px;
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 0 0 14px
+       C) 10px
+    */
+   margin: 0 0 14px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) var(--muted)
+       C) transparent
+    */
+   color: var(--orange);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0.92rem
+       C) 0
+    */
+   font-size: 10px;
+}
+
+.text-link {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green)
+       B) var(--orange)
+       C) transparent
+    */
+   color: var(--orange);
+   /* font-weight: controla a espessura (peso) das letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 800
+       B) 600
+       C) 400
+    */
+   font-weight: 800;
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 0.9rem
+       C) 10px
+    */
+   font-size: 0.9rem;
+}
+
+.text-link span {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green)
+       B) var(--orange)
+       C) transparent
+    */
+   color: var(--green);
+}
+
+/* ============ SOBRE A EMPRESA ============ */
+.about {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) grid
+       B) block
+       C) flex
+    */
+   display: block;
+   /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0.9fr 1.1fr
+       B) 1fr 1fr
+       C) 1fr
+    */
+   grid-template-columns: 0.9fr 1.1fr;
+   /* align-items: alinha itens no eixo transversal de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) stretch
+       B) start
+       C) center
+    */
+   align-items: stretch;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 54px
+       C) 10px
+    */
+   gap: 54px;
+}
+
+/* ============ IMAGEM SOBRE ============ */
+.about-image img {
+   /* height: define a altura.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 350px
+       C) 10px
+    */
+   height: 350px;
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 8px
+       B) 0
+       C) var(--radius)
+    */
+   border-radius: 8px;
+   /* object-position: escolhe a parte da imagem que permanece visível.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) bottom
+       B) top
+       C) center
+    */
+   object-position: bottom;
+}
+
+.about-content p:not(.eyebrow) {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--muted)
+       B) transparent
+       C) var(--orange)
+    */
+   color: var(--muted);
+}
+
+.about-list {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) flex
+       B) grid
+       C) block
+    */
+   display: flex;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 18px
+    */
+   gap: 18px;
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 22px 0 26px
+    */
+   margin: 22px 0 26px;
+}
+
+.about-list li {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--green-dark)
+       C) var(--orange)
+    */
+   color: var(--green-dark);
+   /* font-weight: controla a espessura (peso) das letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 400
+       B) 600
+       C) 700
+    */
+   font-weight: 700;
+}
+
+.about-list li::first-letter {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green)
+       B) transparent
+       C) var(--orange)
+    */
+   color: var(--green);
+}
+
+/* ============ DIFERENCIAIS ============ */
+.benefits {
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 50%
+       C) 100%
+    */
+   width: 100%;
+   /* max-width: limita a largura máxima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) none
+       C) 10px
+    */
+   max-width: 10px;
+   /* padding-right: define espaço interno à direita.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) max(24px, calc((100vw - var(--content-width)) / 2))
+       C) 0
+    */
+   padding-right: max(24px, calc((100vw - var(--content-width)) / 2));
+   /* padding-left: define espaço interno à esquerda.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) max(24px, calc((100vw - var(--content-width)) / 2))
+    */
+   padding-left: max(24px, calc((100vw - var(--content-width)) / 2));
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--orange)
+       C) var(--green-soft)
+    */
+   background: var(--green-soft);
+}
+
+/* ============ GRADE DE DIFERENCIAIS ============ */
+.benefit-grid {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) flex
+       B) grid
+       C) block
+    */
+   display: grid;
+   /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1fr 1fr
+       B) 1fr
+       C) repeat(3, minmax(0, 1fr))
+    */
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 28px
+       C) 0
+    */
+   gap: 28px;
+   /* max-width: limita a largura máxima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) var(--content-width)
+    */
+   max-width: var(--content-width);
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0 auto
+       C) 0
+    */
+   margin: 10px;
+}
+
+.benefit-card {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) grid
+       B) flex
+       C) block
+    */
+   display: block;
+   /* align-items: alinha itens no eixo transversal de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) start
+       C) stretch
+    */
+   align-items: center;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 16px
+       C) 10px
+    */
+   gap: 16px;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 12px
+    */
+   padding: 12px;
+}
+
+.benefit-icon {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) block
+       B) grid
+       C) flex
+    */
+   display: flex;
+   /* flex: define crescimento, redução e base de um item flexível.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1 1 auto
+       B) 0 0 auto
+       C) 0 0 52px
+    */
+   flex: 1 1 auto;
+   /* place-items: alinha o conteúdo dentro das células de Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) stretch
+       C) start
+    */
+   place-items: stretch;
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 52px
+    */
+   width: 52px;
+   /* height: define a altura.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 52px
+       B) 0
+       C) 10px
+    */
+   height: 52px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--white)
+       B) transparent
+       C) var(--orange)
+    */
+   color: var(--white);
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) var(--green)
+    */
+   background: var(--green);
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 8px
+       B) 50%
+       C) 0
+    */
+   border-radius: 50%;
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 1.4rem
+    */
+   font-size: 1.4rem;
+}
+
+.benefit-card h3 {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0 0 5px
+       B) 10px
+       C) 0
+    */
+   margin: 0 0 5px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) var(--green-dark)
+    */
+   color: var(--green-dark);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 1rem
+    */
+   font-size: 10px;
+}
+
+.benefit-card p {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 18px
+       C) 10px
+    */
+   margin: 18px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--muted)
+       C) var(--orange)
+    */
+   color: var(--muted);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 0.9rem
+       C) 10px
+    */
+   font-size: 0.9rem;
+}
+
+/* ============ GRADE DE DEPOIMENTOS ============ */
+.testimonial-grid {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) flex
+       B) block
+       C) grid
+    */
+   display: grid;
+   /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1fr 1fr
+       B) repeat(3, minmax(0, 1fr))
+       C) 1fr
+    */
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 18px
+    */
+   gap: 18px;
+}
+
+/* ============ CARTÃO DE DEPOIMENTO ============ */
+.testimonial-card {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) block
+       B) grid
+       C) flex
+    */
+   display: block;
+   /* align-items: alinha itens no eixo transversal de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) start
+       B) flex-start
+       C) center
+    */
+   align-items: flex-start;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 14px
+    */
+   gap: 14px;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 22px
+       C) 10px
+    */
+   padding: 22px;
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) var(--white)
+       C) transparent
+    */
+   background: var(--orange);
+   /* border: define uma borda completa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1px solid var(--border)
+       B) none
+       C) 1px solid #999
+    */
+   border: 1px solid #999;
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 8px
+       B) var(--radius)
+       C) 0
+    */
+   border-radius: var(--radius);
+   /* box-shadow: cria sombra em volta da caixa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0 4px 12px rgba(0,0,0,0.25)
+       B) none
+       C) 0 5px 18px rgba(26, 67, 42, 0.05)
+    */
+   box-shadow: 0 5px 18px rgba(26, 67, 42, 0.05);
+}
+
+.testimonial-avatar {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) grid
+       B) flex
+       C) block
+    */
+   display: flex;
+   /* flex: define crescimento, redução e base de um item flexível.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0 0 auto
+       B) 1 1 auto
+       C) 0 0 48px
+    */
+   flex: 0 0 48px;
+   /* place-items: alinha o conteúdo dentro das células de Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) start
+       C) stretch
+    */
+   place-items: stretch;
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 48px
+    */
+   width: 48px;
+   /* height: define a altura.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 48px
+    */
+   height: 10px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--white)
+       B) transparent
+       C) var(--orange)
+    */
+   color: transparent;
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--green)
+       C) var(--orange)
+    */
+   background: var(--green);
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 50%
+       B) 8px
+       C) 0
+    */
+   border-radius: 50%;
+   /* font-weight: controla a espessura (peso) das letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 400
+       B) 600
+       C) 800
+    */
+   font-weight: 800;
+}
+
+.testimonial-card blockquote {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 0 0 14px
+    */
+   margin: 0 0 14px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) var(--text)
+       C) transparent
+    */
+   color: var(--text);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 0.9rem
+    */
+   font-size: 10px;
+   /* font-style: define se o texto é normal ou itálico.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) oblique
+       B) normal
+       C) italic
+    */
+   font-style: oblique;
+}
+
+.testimonial-author {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 18px
+       C) 10px
+    */
+   margin: 18px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) var(--green-dark)
+    */
+   color: var(--green-dark);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 0.88rem
+    */
+   font-size: 0.88rem;
+   /* font-weight: controla a espessura (peso) das letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 800
+       B) 400
+       C) 600
+    */
+   font-weight: 800;
+}
+
+.testimonial-pet {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 2px 0 0
+    */
+   margin: 2px 0 0;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--muted)
+       C) var(--orange)
+    */
+   color: transparent;
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0.78rem
+       B) 0
+       C) 10px
+    */
+   font-size: 0.78rem;
+}
+
+.fictional-note {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 18px 0 0
+    */
+   margin: 18px 0 0;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--muted)
+       B) transparent
+       C) var(--orange)
+    */
+   color: var(--orange);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0.78rem
+       C) 0
+    */
+   font-size: 0.78rem;
+   /* text-align: alinha o conteúdo de texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) left
+       C) right
+    */
+   text-align: center;
+}
+
+/* ============ CONTATO ============ */
+.contact {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) block
+       B) grid
+       C) flex
+    */
+   display: flex;
+   /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0.85fr 1.15fr
+       B) 1fr 1fr
+       C) 1fr
+    */
+   grid-template-columns: 0.85fr 1.15fr;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 48px
+       B) 10px
+       C) 0
+    */
+   gap: 48px;
+   /* align-items: alinha itens no eixo transversal de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) start
+       C) stretch
+    */
+   align-items: stretch;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 48px
+       C) 10px
+    */
+   padding: 48px;
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) var(--cream)
+       C) transparent
+    */
+   background: var(--cream);
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 8px
+       C) 22px
+    */
+   border-radius: 22px;
+}
+
+.contact-content>p:not(.eyebrow) {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--muted)
+       B) var(--orange)
+       C) transparent
+    */
+   color: var(--orange);
+}
+
+.contact-details {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) grid
+       B) block
+       C) flex
+    */
+   display: grid;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 14px
+       C) 0
+    */
+   gap: 14px;
+   /* margin-top: cria espaço externo acima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 26px
+    */
+   margin-top: 26px;
+}
+
+.contact-details li {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) block
+       B) flex
+       C) grid
+    */
+   display: block;
+   /* align-items: alinha itens no eixo transversal de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) start
+       B) stretch
+       C) center
+    */
+   align-items: stretch;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 10px
+       C) 12px
+    */
+   gap: 12px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green-dark)
+       B) var(--orange)
+       C) transparent
+    */
+   color: var(--green-dark);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 0.92rem
+       C) 10px
+    */
+   font-size: 0.92rem;
+}
+
+.contact-details span {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) block
+       B) flex
+       C) inline-grid
+    */
+   display: inline-grid;
+   /* place-items: alinha o conteúdo dentro das células de Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) center
+       B) stretch
+       C) start
+    */
+   place-items: center;
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 30px
+    */
+   width: 10px;
+   /* height: define a altura.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 30px
+       C) 0
+    */
+   height: 30px;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) var(--white)
+    */
+   color: var(--orange);
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) var(--green)
+    */
+   background: var(--orange);
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 50%
+       C) 8px
+    */
+   border-radius: 8px;
+}
+
+/* ============ FORMULÁRIO ============ */
+.contact-form {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) grid
+       B) flex
+       C) block
+    */
+   display: flex;
+   /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) repeat(2, minmax(0, 1fr))
+       B) 1fr
+       C) 1fr 1fr
+    */
+   grid-template-columns: 1fr;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 16px
+       C) 0
+    */
+   gap: 16px;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 24px
+    */
+   padding: 24px;
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) rgba(255, 255, 255, 0.72)
+       C) var(--green)
+    */
+   background: rgba(255, 255, 255, 0.72);
+   /* border: define uma borda completa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1px solid #999
+       B) none
+       C) 1px solid rgba(46, 139, 80, 0.12)
+    */
+   border: none;
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 8px
+       B) var(--radius)
+       C) 0
+    */
+   border-radius: var(--radius);
+}
+
+/* ============ CAMPO DO FORMULÁRIO ============ */
+.form-group {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) flex
+       B) block
+       C) grid
+    */
+   display: grid;
+   /* flex-direction: escolhe se os itens ficam em linha ou coluna.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) row-reverse
+       B) row
+       C) column
+    */
+   flex-direction: row;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 7px
+    */
+   gap: 7px;
+}
+
+.form-group-full {
+   /* grid-column: indica quais colunas o elemento ocupa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) auto
+       B) span 2
+       C) 1 / -1
+    */
+   grid-column: span 2;
+}
+
+.form-group label {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green-dark)
+       B) var(--orange)
+       C) transparent
+    */
+   color: var(--green-dark);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0.82rem
+       B) 10px
+       C) 0
+    */
+   font-size: 10px;
+   /* font-weight: controla a espessura (peso) das letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 700
+       B) 600
+       C) 400
+    */
+   font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 100%
+       C) 50%
+    */
+   width: 100%;
+   /* min-height: define uma altura mínima.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 44px
+    */
+   min-height: 44px;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 11px 12px
+    */
+   padding: 11px 12px;
+   /* border: define uma borda completa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 1px solid #d8ded7
+       B) 1px solid #999
+       C) none
+    */
+   border: 1px solid #999;
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 50%
+       B) 8px
+       C) 0
+    */
+   border-radius: 50%;
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) transparent
+       C) var(--white)
+    */
+   background: var(--orange);
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--orange)
+       C) var(--text)
+    */
+   color: var(--orange);
+   /* font: ajusta a fonte e propriedades tipográficas em uma única declaração.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) bold 14px Arial, sans-serif
+       B) inherit
+       C) normal 16px Arial, sans-serif
+    */
+   font: bold 14px Arial, sans-serif;
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0.88rem
+       B) 10px
+       C) 0
+    */
+   font-size: 10px;
+}
+
+.form-group textarea {
+   /* resize: permite ou impede redimensionar um textarea.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) vertical
+       B) horizontal
+       C) none
+    */
+   resize:horizontal ;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+   /* outline: adiciona um contorno ao elemento selecionado.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) none
+       B) 3px solid rgba(46, 139, 80, 0.17)
+       C) 1px solid #999
+    */
+   outline: 3px solid rgba(46, 139, 80, 0.17);
+   /* border-color: altera a cor da borda.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) var(--green)
+       C) transparent
+    */
+   border-color: var(--orange);
+}
+
+.form-submit {
+   /* grid-column: indica quais colunas o elemento ocupa.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) auto
+       B) span 2
+       C) 1 / -1
+    */
+   grid-column:span 2 ;
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 50%
+       B) 10px
+       C) 100%
+    */
+   width:100% ;
+}
+
+.form-note {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 18px
+       B) 10px
+       C) 0
+    */
+   margin:18px ;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--orange)
+       B) var(muted)--
+       C) transparent
+    */
+   color: var(--orange);
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 0.75rem
+    */
+   font-size: 0.75rem;
+}
+
+/* ============ RODAPÉ ============ */
+.site-footer {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) flex
+       B) grid
+       C) block
+    */
+   display: ;
+   /* align-items: alinha itens no eixo transversal de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) start
+       B) center
+       C) stretch
+    */
+   align-items: ;
+   /* justify-content: distribui o conteúdo pelo eixo principal.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) space-between
+       B) space-around
+       C) center
+    */
+   justify-content: ;
+   /* flex-wrap: define se itens flexíveis podem quebrar de linha.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) wrap
+       B) nowrap
+       C) wrap-reverse
+    */
+   flex-wrap: ;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 24px
+       B) 10px
+       C) 0
+    */
+   gap: ;
+   /* padding: cria espaço interno.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 28px max(5vw, calc((100vw - var(--content-width)) / 2))
+       B) 0
+       C) 10px
+    */
+   padding: ;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) rgba(255, 255, 255, 0.9)
+       B) var(--green)
+       C) transparent
+    */
+   color: ;
+   /* background: escolhe o fundo/gradiente desta seção.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--white)
+       B) var(--green)
+       C) linear-gradient(110deg, var(--green-dark), var(--green-deep))
+    */
+   background: ;
+}
+
+.footer-logo {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--white)
+       B) transparent
+       C) var(--orange)
+    */
+   color: ;
+}
+
+.footer-logo .logo-copy small {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) rgba(255, 255, 255, 0.75)
+       B) transparent
+       C) var(--green)
+    */
+   color: ;
+}
+
+.site-footer>p {
+   /* margin: controla o espaço externo do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 10px
+       B) 0
+       C) 18px
+    */
+   margin: ;
+   /* font-size: determina o tamanho do texto.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0.82rem
+       B) 0
+       C) 10px
+    */
+   font-size: ;
+}
+
+.footer-copy {
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) var(--green)
+       B) rgba(255, 255, 255, 0.72)
+       C) transparent
+    */
+   color: ;
+}
+
+/* ============ REDES SOCIAIS ============ */
+.social-links {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) flex
+       B) grid
+       C) block
+    */
+   display: ;
+   /* gap: espaço entre os itens de Flexbox ou Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 18px
+       B) 0
+       C) 10px
+    */
+   gap: ;
+}
+
+.social-links a {
+   /* display: escolhe como os elementos são organizados.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) flex
+       B) grid
+       C) block
+    */
+   display: ;
+   /* place-items: alinha o conteúdo dentro das células de Grid.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) stretch
+       B) start
+       C) center
+    */
+   place-items: ;
+   /* width: define a largura do elemento.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 30px
+       C) 10px
+    */
+   width: ;
+   /* height: define a altura.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 30px
+       B) 0
+       C) 10px
+    */
+   height: ;
+   /* color: define a cor da letra ou símbolo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--orange)
+       C) var(--green-dark)
+    */
+   color: ;
+   /* background: define cor ou gradiente do fundo.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) transparent
+       B) var(--white)
+       C) var(--orange)
+    */
+   background: ;
+   /* border-radius: arredonda os cantos.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 0
+       B) 8px
+       C) 50%
+    */
+   border-radius: ;
+   /* font-weight: controla a espessura (peso) das letras.
+       Compare com o modelo.pdf. Qual valor reproduz o resultado?
+       A) 600
+       B) 800
+       C) 400
+    */
+   font-weight: ;
+}
+
+/* RESPONSIVIDADE OU ACESSIBILIDADE: mantenha esta regra. */
+@media (max-width: 980px) {
+
+   /* ============ CABEÇALHO RESPONSIVO ============ */
+   .site-header {
+      /* flex-wrap: define se itens flexíveis podem quebrar de linha.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) nowrap
+           B) wrap-reverse
+           C) wrap
+        */
+      flex-wrap: ;
+      /* justify-content: distribui o conteúdo pelo eixo principal.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) space-around
+           B) center
+           C) space-between
+        */
+      justify-content: ;
+      /* padding: cria espaço interno.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 12px 24px
+           B) 10px
+           C) 0
+        */
+      padding: ;
+   }
+
+   /* ============ MENU RESPONSIVO ============ */
+   .main-nav ul {
+      /* flex-wrap: define se itens flexíveis podem quebrar de linha.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) nowrap
+           B) wrap-reverse
+           C) wrap
+        */
+      flex-wrap: ;
+      /* justify-content: distribui o conteúdo pelo eixo principal.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) space-around
+           B) center
+           C) space-between
+        */
+      justify-content: ;
+   }
+
+   /* ============ BANNER RESPONSIVO ============ */
+   .hero {
+      /* gap: espaço entre os itens de Flexbox ou Grid.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 28px
+           C) 10px
+        */
+      gap: ;
+      /* padding-top: define espaço interno no topo.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 10px
+           B) 0
+           C) 44px
+        */
+      padding-top: ;
+      /* padding-bottom: define espaço interno embaixo.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 10px
+           C) 44px
+        */
+      padding-bottom: ;
+   }
+
+   /* ============ TÍTULO RESPONSIVO ============ */
+   .hero h1 {
+      /* font-size: determina o tamanho do texto.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) clamp(2rem, 4vw, 3rem)
+           C) 10px
+        */
+      font-size: ;
+   }
+
+   /* ============ IMAGENS DOS SERVIÇOS ============ */
+   .service-card>img {
+      /* height: define a altura.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 170px
+           B) 10px
+           C) 0
+        */
+      height: ;
+   }
+
+   /* ============ SOBRE A EMPRESA ============ */
+   .about {
+      /* gap: espaço entre os itens de Flexbox ou Grid.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 32px
+           C) 10px
+        */
+      gap: ;
+   }
+
+   /* ============ CONTATO RESPONSIVO ============ */
+   .contact {
+      /* gap: espaço entre os itens de Flexbox ou Grid.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 10px
+           C) 28px
+        */
+      gap: ;
+      /* padding: cria espaço interno.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 32px
+           B) 0
+           C) 10px
+        */
+      padding: ;
+   }
+
+   /* ============ RODAPÉ RESPONSIVO ============ */
+   .site-footer {
+      /* justify-content: distribui o conteúdo pelo eixo principal.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) center
+           B) space-between
+           C) space-around
+        */
+      justify-content: ;
+      /* text-align: alinha o conteúdo de texto.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) right
+           B) left
+           C) center
+        */
+      text-align: ;
+   }
+}
+
+/* RESPONSIVIDADE OU ACESSIBILIDADE: mantenha esta regra. */
+@media (max-width: 700px) {
+
+   /* ============ ROLAGEM EM CELULAR ============ */
+   html {
+      /* scroll-padding-top: reserva espaço para o cabeçalho ao navegar por âncoras.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 10px
+           B) 150px
+           C) 0
+        */
+      scroll-padding-top: ;
+   }
+
+   /* ============ CABEÇALHO EM CELULAR ============ */
+   .site-header {
+      /* position: escolhe o modo de posicionamento do elemento.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) absolute
+           B) static
+           C) relative
+        */
+      position: ;
+      /* gap: espaço entre os itens de Flexbox ou Grid.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 12px
+           B) 10px
+           C) 0
+        */
+      gap: ;
+   }
+
+   .main-nav {
+      /* width: define a largura do elemento.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 100%
+           B) 10px
+           C) 50%
+        */
+      width: ;
+   }
+
+   /* ============ MENU EM CELULAR ============ */
+   .main-nav ul {
+      /* gap: espaço entre os itens de Flexbox ou Grid.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 10px
+           C) 8px 16px
+        */
+      gap: ;
+   }
+
+   .main-nav a {
+      /* font-size: determina o tamanho do texto.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0.78rem
+           B) 0
+           C) 10px
+        */
+      font-size: ;
+   }
+
+   /* ============ BANNER EM CELULAR ============ */
+   .hero {
+      /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 1fr 1fr
+           B) 1fr
+           C) repeat(3, minmax(0, 1fr))
+        */
+      grid-template-columns: ;
+      /* gap: espaço entre os itens de Flexbox ou Grid.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 26px
+           C) 10px
+        */
+      gap: ;
+      /* padding: cria espaço interno.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 42px 24px
+           C) 10px
+        */
+      padding: ;
+   }
+
+   /* ============ IMAGEM DO BANNER EM CELULAR ============ */
+   .hero-image {
+      /* min-height: define uma altura mínima.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 250px
+           C) 10px
+        */
+      min-height: ;
+   }
+
+   .hero-image img {
+      /* position: escolhe o modo de posicionamento do elemento.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) relative
+           B) static
+           C) absolute
+        */
+      position: ;
+      /* min-height: define uma altura mínima.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 250px
+           B) 10px
+           C) 0
+        */
+      min-height: ;
+      /* max-height: limita a altura máxima.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 340px
+           B) 10px
+           C) 0
+        */
+      max-height: ;
+      /* border-radius: arredonda os cantos.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 8px
+           B) 22px
+           C) 0
+        */
+      border-radius: ;
+   }
+
+   /* ============ TÍTULO DO BANNER EM CELULAR ============ */
+   .hero h1 {
+      /* font-size: determina o tamanho do texto.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) clamp(2rem, 9vw, 3rem)
+           B) 0
+           C) 10px
+        */
+      font-size: ;
+   }
+
+   /* ============ SEÇÕES EM CELULAR ============ */
+   .section {
+      /* width: define a largura do elemento.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) min(100% - 36px, var(--content-width))
+           B) 10px
+           C) 0
+        */
+      width: ;
+      /* padding-top: define espaço interno no topo.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 10px
+           B) 0
+           C) 52px
+        */
+      padding-top: ;
+      /* padding-bottom: define espaço interno embaixo.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 52px
+           C) 10px
+        */
+      padding-bottom: ;
+   }
+
+   /* ============ FUNDOS LARGOS EM CELULAR ============ */
+   .services,
+   .benefits {
+      /* width: define a largura do elemento.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 100%
+           B) 50%
+           C) 10px
+        */
+      width: ;
+      /* padding-right: define espaço interno à direita.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 10px
+           B) 0
+           C) 18px
+        */
+      padding-right: ;
+      /* padding-left: define espaço interno à esquerda.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 10px
+           B) 18px
+           C) 0
+        */
+      padding-left: ;
+   }
+
+   /* ============ GRADES EM CELULAR ============ */
+   .service-grid,
+   .benefit-grid,
+   .testimonial-grid {
+      /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) repeat(3, minmax(0, 1fr))
+           B) 1fr
+           C) 1fr 1fr
+        */
+      grid-template-columns: ;
+   }
+
+   /* ============ IMAGENS DOS SERVIÇOS EM CELULAR ============ */
+   .service-card>img {
+      /* height: define a altura.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 220px
+           B) 10px
+           C) 0
+        */
+      height: ;
+   }
+
+   /* ============ TEXTOS DOS CARTÕES EM CELULAR ============ */
+   .card-content p {
+      /* min-height: define uma altura mínima.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 10px
+           C) 30px
+        */
+      min-height: ;
+   }
+
+   /* ============ SOBRE EM CELULAR ============ */
+   .about {
+      /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) repeat(3, minmax(0, 1fr))
+           B) 1fr
+           C) 1fr 1fr
+        */
+      grid-template-columns: ;
+      /* gap: espaço entre os itens de Flexbox ou Grid.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 26px
+           C) 10px
+        */
+      gap: ;
+   }
+
+   /* ============ IMAGEM SOBRE EM CELULAR ============ */
+   .about-image img {
+      /* height: define a altura.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 260px
+           B) 10px
+           C) 0
+        */
+      height: ;
+   }
+
+   /* ============ DIFERENCIAIS EM CELULAR ============ */
+   .benefit-grid {
+      /* gap: espaço entre os itens de Flexbox ou Grid.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 12px
+           C) 10px
+        */
+      gap: ;
+   }
+
+   /* ============ CONTATO EM CELULAR ============ */
+   .contact {
+      /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 1fr 1fr
+           B) 1fr
+           C) repeat(3, minmax(0, 1fr))
+        */
+      grid-template-columns: ;
+      /* gap: espaço entre os itens de Flexbox ou Grid.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 10px
+           C) 24px
+        */
+      gap: ;
+      /* padding: cria espaço interno.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 10px
+           B) 24px 18px
+           C) 0
+        */
+      padding: ;
+      /* border-radius: arredonda os cantos.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0
+           B) 16px
+           C) 8px
+        */
+      border-radius: ;
+   }
+
+   /* ============ FORMULÁRIO EM CELULAR ============ */
+   .contact-form {
+      /* grid-template-columns: define quantas colunas o Grid terá e seus tamanhos.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 1fr
+           B) 1fr 1fr
+           C) repeat(3, minmax(0, 1fr))
+        */
+      grid-template-columns: ;
+      /* padding: cria espaço interno.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 10px
+           B) 0
+           C) 18px
+        */
+      padding: ;
+   }
+
+   .form-group-full,
+   .form-submit {
+      /* grid-column: indica quais colunas o elemento ocupa.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) auto
+           B) span 2
+           C) 1 / -1
+        */
+      grid-column: ;
+   }
+
+   /* ============ RODAPÉ EM CELULAR ============ */
+   .site-footer {
+      /* flex-direction: escolhe se os itens ficam em linha ou coluna.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) row
+           B) row-reverse
+           C) column
+        */
+      flex-direction: ;
+      /* gap: espaço entre os itens de Flexbox ou Grid.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 14px
+           B) 0
+           C) 10px
+        */
+      gap: ;
+      /* padding: cria espaço interno.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 10px
+           B) 0
+           C) 30px 20px
+        */
+      padding: ;
+   }
+}
+
+/* RESPONSIVIDADE OU ACESSIBILIDADE: mantenha esta regra. */
+@media (prefers-reduced-motion: reduce) {
+
+   /* ============ ACESSIBILIDADE: MOVIMENTO REDUZIDO ============ */
+   html {
+      /* scroll-behavior: controla o movimento da rolagem ao clicar nos links.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) smooth
+           B) auto
+           C) initial
+        */
+      scroll-behavior: ;
+   }
+
+   *,
+   *::before,
+   *::after {
+      /* transition-duration: determina quanto tempo dura a transição.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 1s
+           B) 0.01ms !important
+           C) 250ms
+        */
+      transition-duration: ;
+      /* animation-duration: determina a duração da animação.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) 0.01ms !important
+           B) 250ms
+           C) 1s
+        */
+      animation-duration: ;
+      /* scroll-behavior: controla o movimento da rolagem ao clicar nos links.
+           Compare com o modelo.pdf. Qual valor reproduz o resultado?
+           A) auto !important
+           B) smooth
+           C) auto
+        */
+      scroll-behavior: ;
+   }
+}
